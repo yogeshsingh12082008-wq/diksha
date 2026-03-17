@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Diksha Singh Rajput ❤️</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at center, #4a0000 0%, #1a0000 100%);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  /* Music Start Overlay */
+  #music-prompt {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #000;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease-out;
+  }
+
+  .start-btn {
+    padding: 20px 50px;
+    font-size: 24px;
+    background: #ffb6c1;
+    color: #4a0000;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    box-shadow: 0 0 30px #ffb6c1;
+    transition: 0.3s;
+  }
+
+  .start-btn:hover { transform: scale(1.1); background: white; }
+
+  /* Header Section */
+  header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  #typing-container {
+    height: 80px;
+    margin-bottom: 20px;
+  }
+
+  #typing {
+    font-family: 'Dancing Script', cursive;
+    font-size: 65px;
+    color: #ffb6c1;
+    text-shadow: 0 0 20px rgba(255,182,193,0.9);
+    border-right: 4px solid #ffb6c1;
+    padding-right: 12px;
+  }
+
+  .subtitle {
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #ffd700;
+    opacity: 0;
+    margin-top: 20px;
+  }
+
+  /* Big Heart Gallery */
+  .gallery-section {
+    padding: 100px 20px;
+    background: rgba(0,0,0,0.3);
+  }
+
+  .heart-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .heart {
+    width: 350px; 
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(50% 15%, 61% 0%, 75% 0%, 100% 25%, 100% 62%, 50% 100%, 0% 62%, 0% 25%, 25% 0%, 39% 0%);
+    box-shadow: 0 0 40px rgba(255, 105, 180, 0.4);
+    transition: all 0.6s ease;
+    filter: brightness(0.9);
+  }
+
+  .heart:hover {
+    transform: scale(1.08) translateY(-15px);
+    box-shadow: 0 0 60px #ff69b4;
+    filter: brightness(1.1);
+  }
+
+  .pic1 { background-image: url('https://image2url.com/r2/default/images/1773762049524-818c78d5-c587-4414-bc8c-7a69a25d27a0.jpg'); }
+  .pic2 { background-image: url('https://image2url.com/r2/default/images/1773762438350-7cac9fed-de0b-4026-95cb-3832baad1660.jpg'); }
+  .pic3 { background-image: url('https://image2url.com/r2/default/images/1773762478753-4fe4a602-9a41-43d0-9837-0e96311da47e.jpg'); }
+
+  /* Appreciation Text Blocks */
+  .appreciation-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 60px 40px;
+    line-height: 2.2;
+  }
+
+  .appreciation-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: #ffb6c1;
+    font-size: 45px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  .appreciation-section p {
+    font-size: 24px;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1.2s all ease;
+    color: #fce4ec;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Interaction Button */
+  .forever-box {
+    padding: 100px 20px;
+    background: linear-gradient(transparent, rgba(255, 182, 193, 0.05), transparent);
+  }
+
+  .main-btn {
+    padding: 22px 70px;
+    border: 2px solid #ffb6c1;
+    border-radius: 60px;
+    background: transparent;
+    color: #ffb6c1;
+    font-weight: 600;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.4s;
+    letter-spacing: 2px;
+  }
+
+  .main-btn:hover {
+    background: #ffb6c1;
+    color: #4b0000;
+    box-shadow: 0 0 50px #ffb6c1;
+  }
+
+  /* Popup Overlay */
+  .overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.96);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .popup {
+    background: #fff0f5;
+    color: #333;
+    padding: 60px;
+    border-radius: 40px;
+    width: 90%;
+    max-width: 550px;
+    text-align: center;
+    border: 6px solid #ffb6c1;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.27);
+  }
+
+  .close-btn {
+    margin-top: 35px;
+    padding: 12px 40px;
+    background: #cc0000;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  /* Particles */
+  .particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1;
+    animation: moveUp 8s linear infinite;
+  }
+
+  @keyframes moveUp {
+    0% { transform: translateY(110vh) rotate(0); opacity: 0; }
+    10% { opacity: 0.7; }
+    90% { opacity: 0.7; }
+    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+  }
+
+  @keyframes fadeIn { to { opacity: 1; } }
+  @keyframes popIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+</style>
+</head>
+<body>
+
+  <audio id="bgMusic" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="music-prompt">
+    <p style="margin-bottom: 25px; font-size: 22px; font-weight: 300;">Ready for something special?</p>
+    <button class="start-btn" onclick="startEverything()">Click to Begin 🎵</button>
+  </div>
+
+  <header>
+    <div id="typing-container">
+      <h1 id="typing"></h1>
+    </div>
+    <div class="subtitle" id="sub">My universe begins and ends with you.</div>
+  </header>
+
+  <section class="gallery-section">
+    <div class="heart-container">
+      <div class="heart pic1"></div>
+      <div class="heart pic2"></div>
+      <div class="heart pic3"></div>
+    </div>
+  </section>
+
+  <section class="appreciation-section">
+    <h2>The Charm of Your Zulfein</h2>
+    <p class="reveal-on-scroll">There is a specific kind of magic in the way your *zulfein* flow. It’s like a dark, beautiful river that frames a face carved by angels. Watching your hair catch the breeze is my favorite cinematic view. Every strand adds to the mystery and grace that makes you, uniquely you.</p>
+    
+    <hr style="border: 0; border-top: 1px solid rgba(255,182,193,0.3); margin: 60px 0;">
+
+    <h2>The Radiance of Your Face</h2>
+    <p class="reveal-on-scroll">Your face is my favorite sunrise. I see a kindness in your eyes that heals me and a smile that makes the rest of the world go silent. You carry a glow that doesn't come from light, but from the beautiful soul within you. You are, quite simply, breathtaking.</p>
+
+    <hr style="border: 0; border-top: 1px solid rgba(255,182,193,0.3); margin: 60px 0;">
+
+    <h2>The Depth of Your Mind</h2>
+    <p class="reveal-on-scroll">While your beauty caught my eye, it's your mind that captured my heart. You think with such elegance and speak with such heart. Your intelligence is a spark that keeps me inspired, and your perspective on life makes me want to be a better man. I am in love with your thoughts as much as your smile.</p>
+
+    <hr style="border: 0; border-top: 1px solid rgba(255,182,193,0.3); margin: 60px 0;">
+
+    <h2>Our Forever Happiness</h2>
+    <p class="reveal-on-scroll">I promise to appreciate you in every version of yourself. Whether you are laughing, thinking, or just being still—you are my peace. I want to build a life where your happiness is the only goal and your love is the only constant. Together, we are infinity.</p>
+  </section>
+
+  <section class="forever-box">
+    <button class="main-btn" onclick="togglePopup(true)">Open My Final Promise 💌</button>
+  </section>
+
+  <div class="overlay" id="overlay">
+    <div class="popup">
+      <h2 style="color: #cc0000; font-family: 'Dancing Script'; font-size: 50px; margin-bottom: 10px;">Diksha...</h2>
+      <p style="font-size: 24px; line-height: 1.8;">You are the rhythm of my heart and the reason for my happiest thoughts. I will cherish you, protect you, and love you through every season of life.</p>
+      <p style="font-size: 32px; color: #cc0000; margin-top: 30px;"><b>I LOVE YOU TO INFINITY & BEYOND ♾️</b></p>
+      <button class="close-btn" onclick="togglePopup(false)">Close ❌</button>
+    </div>
+  </div>
+
+  <script>
+    const message = "Diksha Singh Rajput ❤️";
+    let idx = 0;
+
+    function startEverything() {
+      // Hide prompt with transition
+      document.getElementById('music-prompt').style.opacity = '0';
+      setTimeout(() => {
+        document.getElementById('music-prompt').style.display = 'none';
+      }, 1000);
+      
+      // Play Music
+      const audio = document.getElementById('bgMusic');
+      audio.volume = 0.5;
+      audio.play();
+      
+      // Start Animations
+      setTimeout(type, 1000);
+      setTimeout(() => {
+        document.getElementById('sub').style.animation = "fadeIn 2s ease forwards";
+      }, 3000);
+    }
+
+    function type() {
+      if (idx < message.length) {
+        document.getElementById("typing").innerHTML += message.charAt(idx);
+        idx++;
+        setTimeout(type, 150);
+      }
+    }
+
+    function togglePopup(show) {
+      document.getElementById("overlay").style.display = show ? "flex" : "none";
+    }
+
+    // Scroll Reveal Effect
+    window.addEventListener('scroll', () => {
+      const reveals = document.querySelectorAll('.reveal-on-scroll');
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          el.classList.add('reveal');
+        }
+      });
+    });
+
+    // Particle System
+    function spawnParticle(symbol) {
+      const p = document.createElement("div");
+      p.innerHTML = symbol;
+      p.className = "particle";
+      p.style.left = Math.random() * 100 + "vw";
+      p.style.fontSize = (Math.random() * 20 + 20) + "px";
+      p.style.animationDuration = (Math.random() * 4 + 6) + "s";
+      document.body.appendChild(p);
+      setTimeout(() => p.remove(), 9000);
+    }
+
+    setInterval(() => spawnParticle("❤️"), 400);
+    setInterval(() => spawnParticle("🌹"), 1000);
+    setInterval(() => spawnParticle("✨"), 1500);
+  </script>
+</body>
+</html>
